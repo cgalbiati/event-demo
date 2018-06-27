@@ -1,7 +1,7 @@
 import firebase from './firebase';
 
 const fetchNamePlaceholder = () => (
-  Promise.resolve('placeholder')
+  Promise.resolve('the placeholder')
 );
 
 const fetchNameFirebase = () => (
@@ -15,4 +15,9 @@ const fetchNameMicroservice = () => (
     .then(json => json.ride.title)
 );
 
-export default fetchNameMicroservice;
+const fetchNameFromServer = () => (
+  fetch('/server/test')
+    .then(res => res.text())
+);
+
+export default fetchNameFromServer;
